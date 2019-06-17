@@ -14,12 +14,12 @@ namespace Dice_Game
             Console.WriteLine("Please enter your name");
             string playerName = Console.ReadLine();
             Console.WriteLine($"Hello {playerName}");
-            
 
             DiceRoll random = new DiceRoll();
             Console.WriteLine($"Random dice roll is {random.Random()}");
             Console.ReadKey();
 
+        
         }
     }
 }
