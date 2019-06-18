@@ -10,7 +10,9 @@ namespace Dice_Game
     {
         static void Main(string[] args)
         {
-         Game game = new Game();    
+            Console.WriteLine("Welcome to Warren's C# Dice Game!");
+
+            Game game = new Game();    
         }
     }
 }

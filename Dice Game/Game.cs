@@ -6,28 +6,26 @@ using System.Threading.Tasks;
 
 namespace Dice_Game
 {
-   
+
     public class Game
     {
 
         Player player = new Player();
-        private Score score = new Score();
+        private readonly Score score = new Score();
+        DiceRoll random = new DiceRoll();
         private bool gameStatus = true;
+        private string userInstruction;
 
 
         public Game()
         {
-            Console.WriteLine("Welcome to Warren's C# Dice Game!");
+            Console.WriteLine($"Hello {player.PlayerName}");
 
-            RunGame();            
+            RunGame();
         }
 
         public void RunGame()
         {
-
-            Console.WriteLine($"Hello {player.PlayerName}");
-
-            DiceRoll random = new DiceRoll();
 
             while (gameStatus)
             {
@@ -38,40 +36,72 @@ namespace Dice_Game
 
                 if (CurrentRoll == 1)
                 {
-                    Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
-                    Console.WriteLine($"Final Score is {player.Score}");
-                    Console.WriteLine("game over!");
-                    gameStatus = false;
-
+                    Gameover();
                 }
                 else if (player.Score > 21)
                 {
-                    Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
-                    Console.WriteLine($"Final Score is {player.Score}");
-                    Console.WriteLine($"Congratulations You've won with a score of {player.Score}");
-                    gameStatus = false;
+                    Gameover();
                 }
                 else
                 {
                     Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
                     Console.WriteLine($"Current Score is {player.Score}");
-                }
 
                     Console.ReadLine();
+                }
             }
+        }
 
+        private void UserInput(string userInstruction)
+        {
+            if (userInstruction == "r")
+            {
+                ResetGame();
+            }
+            else if (userInstruction == "q")
+            {
+                Environment.Exit(0);
+            }
         }
 
         private void ResetGame()
         {
+            player.GameWon = false;
+            player.GameLoss = false;
             player.Score = 0;
             gameStatus = true;
             RunGame();
         }
-        
+
+        private void Gameover()
+        {
+            if (player.GameWon)
+            {
+                Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
+                Console.WriteLine($"Final Score for {player.PlayerName} is {player.Score}");
+            }
+
+            else
+
+            {
+                Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
+                Console.WriteLine($"Final Score for {player.PlayerName} is {player.Score}");
+                Console.WriteLine("Game over!");
+            }
+            gameStatus = false;
+
+            Console.WriteLine("Please press r to Restart or q to Quit");
+
+            userInstruction = Console.ReadLine().ToLower().Trim();
+
+
+            UserInput(userInstruction);
+
+        }
+
     }
 
-        
 }
 
+        
 
