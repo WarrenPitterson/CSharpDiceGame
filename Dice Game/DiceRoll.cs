@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace Dice_Game
 {
-    class DiceRoll
+    public class DiceRoll
     {
-        public int Random()
+        public int RandomDiceRoll()
         {
             Random randomRoll = new Random();
             return randomRoll.Next(1, 6);
+
         }
+
+        //public int RandomDiceRollLoss()
+        //{
+        //    if (RandomDiceRoll() == 1)
+        //    {
+
+        //    }
+        //}
+
+        
     }
 }

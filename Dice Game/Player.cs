@@ -14,16 +14,15 @@ namespace Dice_Game
         public Player()
         {
 
-        while (true)
+            while (true)
             {
 
-            Console.WriteLine("Please enter your name");
-            PlayerName = Console.ReadLine();
+                Console.WriteLine("Please enter your name");
+                PlayerName = Console.ReadLine();
 
-           if(string.IsNullOrEmpty(PlayerName))
-           Console.WriteLine("Player Name can't be left blank");
-
-                break;
+                if (string.IsNullOrEmpty(PlayerName))
+                    Console.WriteLine("Player Name can't be left blank");
+            else break;
             }
         }
         

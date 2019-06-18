@@ -22,7 +22,7 @@ namespace Dice_Game
             RunGame();            
         }
 
-        private void RunGame()
+        public void RunGame()
         {
             //Add methods to run game
 
@@ -30,8 +30,13 @@ namespace Dice_Game
             Console.WriteLine($"Hello {player.PlayerName}");
 
             DiceRoll random = new DiceRoll();
-            Console.WriteLine($"Random dice roll is {random.Random()}");
+            Console.WriteLine($"Random dice roll is {random.RandomDiceRoll()}");
             Console.ReadKey();
+
+            while (gameStatus)
+            {
+                int Currentscore = random.RandomDiceRoll();
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Dice_Game
 {
     class Score
     {
-        
+        public int CurrentScore { get; set; }
+        //Stores final scores with times 
     }
 }

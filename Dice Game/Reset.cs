@@ -8,6 +8,6 @@ namespace Dice_Game
 {
     class Reset
     {
-        
+        //Reset the score to 0
     }
 }
