@@ -24,7 +24,7 @@ namespace Dice_Game
 
         public void RunGame()
         {
-            
+
             Console.WriteLine($"Hello {player.PlayerName}");
 
             DiceRoll random = new DiceRoll();
@@ -33,6 +33,8 @@ namespace Dice_Game
             while (gameStatus)
             {
                 int CurrentRoll = random.RandomDiceRoll();
+
+                player.Score = player.Score + CurrentRoll;
 
 
                 if (CurrentRoll == 1)
@@ -46,11 +48,19 @@ namespace Dice_Game
                 else if (player.Score > 21)
                 {
                     Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
+                    Console.WriteLine($"Final Score is {player.Score}");
                     Console.WriteLine($"Congratulations You've won with a score of {player.Score}");
                     gameStatus = false;
-                    Console.ReadLine();
                 }
+                else
+                {
+                    Console.WriteLine($"You Rolled a {random.RandomDiceRoll()}");
+                    Console.WriteLine($"Current Score is {player.Score}");
+                }
+
+                    Console.ReadLine();
             }
+
         }
 
         private void ResetGame()
@@ -59,6 +69,10 @@ namespace Dice_Game
             gameStatus = true;
             RunGame();
         }
+        
     }
+
+        
 }
+
 
