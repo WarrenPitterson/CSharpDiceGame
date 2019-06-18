@@ -6,9 +6,26 @@ using System.Threading.Tasks;
 
 namespace Dice_Game
 {
-    class Player
+    public class Player
     {
-        public string Name { get; set; }
+        public string PlayerName { get; set; }
         public int Score { get; set; }
+
+        public Player()
+        {
+
+        while (true)
+            {
+
+            Console.WriteLine("Please enter your name");
+            PlayerName = Console.ReadLine();
+
+           if(string.IsNullOrEmpty(PlayerName))
+           Console.WriteLine("Player Name can't be left blank");
+
+                break;
+            }
+        }
+        
     }
 }

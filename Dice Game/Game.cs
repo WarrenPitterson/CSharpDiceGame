@@ -7,18 +7,31 @@ using System.Threading.Tasks;
 namespace Dice_Game
 {
    
-    class Game
+    public class Game
     {
+
+        Player player = new Player();
+        private Score score = new Score();
+        private bool gameStatus = true;
+
+
         public Game()
         {
-            RunGame();
-            Player player = new Player();
-            Score score = new Score();
+            Console.WriteLine("Welcome to Warren's Dice Game!");
+
+            RunGame();            
         }
 
         private void RunGame()
         {
             //Add methods to run game
+
+            
+            Console.WriteLine($"Hello {player.PlayerName}");
+
+            DiceRoll random = new DiceRoll();
+            Console.WriteLine($"Random dice roll is {random.Random()}");
+            Console.ReadKey();
         }
     }
 }
