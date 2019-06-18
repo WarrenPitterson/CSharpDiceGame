@@ -14,15 +14,5 @@ namespace Dice_Game
             return randomRoll.Next(1, 6);
 
         }
-
-        //public int RandomDiceRollLoss()
-        //{
-        //    if (RandomDiceRoll() == 1)
-        //    {
-
-        //    }
-        //}
-
-        
     }
 }
