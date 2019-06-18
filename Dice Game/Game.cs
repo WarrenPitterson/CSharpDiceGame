@@ -17,7 +17,7 @@ namespace Dice_Game
 
         public Game()
         {
-            Console.WriteLine("Welcome to Warren's Dice Game!");
+            Console.WriteLine("Welcome to Warren's C# Dice Game!");
 
             RunGame();            
         }
@@ -28,7 +28,6 @@ namespace Dice_Game
             Console.WriteLine($"Hello {player.PlayerName}");
 
             DiceRoll random = new DiceRoll();
-            //Console.WriteLine($"You rolled a {random.RandomDiceRoll()}");
 
             while (gameStatus)
             {
