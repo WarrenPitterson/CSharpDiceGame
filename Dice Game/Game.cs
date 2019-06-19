@@ -88,20 +88,28 @@ namespace Dice_Game
                 Console.WriteLine($"Final Score for {player.PlayerName} is {player.Score}");
                 Console.WriteLine("Game over!");
             }
-            gameStatus = false;
 
-            Console.WriteLine("Please press r to Restart or q to Quit");
+            {
 
-            userInstruction = Console.ReadLine().ToLower().Trim();
+                gameStatus = false;
 
+                Console.WriteLine("Please press r to Restart or q to Quit");
+
+
+            }
+            while ((userInstruction) != "q" || (userInstruction) != "r")
+                {
+
+                userInstruction = Console.ReadLine().ToLower().Trim();
+                Console.WriteLine("value must be q or r");
+                }
 
             UserInput(userInstruction);
 
         }
 
     }
-
 }
 
-        
+
 
